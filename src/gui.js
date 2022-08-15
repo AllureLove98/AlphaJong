@@ -30,9 +30,9 @@ function initGui() {
 	guiSpan.style.backgroundColor = "rgba(255,255,255,0.5)";
 	guiSpan.style.padding = "5px";
 
-	startButton.innerHTML = "Start Bot";
+	startButton.innerHTML = "启动机器人";
 	if (window.localStorage.getItem("alphajongAutorun") == "true") {
-		startButton.innerHTML = "Stop Bot";
+		startButton.innerHTML = "停止机器人";
 	}
 	startButton.style.marginRight = "15px";
 	startButton.onclick = function () {
@@ -58,7 +58,7 @@ function initGui() {
 	guiSpan.appendChild(autorunCheckbox);
 	var checkboxLabel = document.createElement("label");
 	checkboxLabel.htmlFor = "autorun";
-	checkboxLabel.appendChild(document.createTextNode('Autostart'));
+	checkboxLabel.appendChild(document.createTextNode('全自动模式'));
 	checkboxLabel.style.marginRight = "15px";
 	guiSpan.appendChild(checkboxLabel);
 
@@ -91,7 +91,7 @@ function initGui() {
 		guiSpan.appendChild(debugButton);
 	}
 
-	hideButton.innerHTML = "Hide GUI";
+	hideButton.innerHTML = "隐藏界面";
 	hideButton.onclick = function () {
 		toggleGui();
 	};

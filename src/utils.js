@@ -892,17 +892,17 @@ function getWallSize() {
 
 function getCallNameByType(type) {
 	switch (type) {
-		case 1: return "discard";
-		case 2: return "chi";
-		case 3: return "pon";
-		case 4: return "kan(ankan)";
-		case 5: return "kan(daiminkan)";
-		case 6: return "kan(shouminkan)";
-		case 7: return "riichi";
-		case 8: return "tsumo";
-		case 9: return "ron";
-		case 10: return "kyuushu kyuuhai";
-		case 11: return "kita";
+		case 1: return "弃牌";
+		case 2: return "吃";
+		case 3: return "碰";
+		case 4: return "杠(ankan)";
+		case 5: return "杠(daiminkan)";
+		case 6: return "杠(shouminkan)";
+		case 7: return "立直";
+		case 8: return "自摸";
+		case 9: return "和";
+		case 10: return "九种九牌";
+		case 11: return "拔北";
 		default: return type;
 	}
 }

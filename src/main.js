@@ -30,12 +30,12 @@ function toggleRun() {
 	if (run) {
 		log("AlphaJong deactivated!");
 		run = false;
-		startButton.innerHTML = "Start Bot";
+		startButton.innerHTML = "启动机器人";
 	}
 	else if (!run) {
 		log("AlphaJong activated!");
 		run = true;
-		startButton.innerHTML = "Stop Bot";
+		startButton.innerHTML = "停止机器人";
 		main();
 	}
 }
@@ -49,7 +49,7 @@ function waitForMainLobbyLoad() {
 
 	if (!hasFinishedMainLobbyLoading()) { //Otherwise wait for Main Lobby to load and then search for game
 		log("Waiting for Main Lobby to load...");
-		showCrtActionMsg("Wait for Loading.");
+		showCrtActionMsg("等待加载");
 		setTimeout(waitForMainLobbyLoad, 2000);
 		return;
 	}
@@ -63,12 +63,12 @@ function waitForMainLobbyLoad() {
 //Main Loop
 function main() {
 	if (!run) {
-		showCrtActionMsg("Bot is not running.");
+		showCrtActionMsg("机器人未运行");
 		return;
 	}
 	if (!isInGame()) {
 		checkForEnd();
-		showCrtActionMsg("Waiting for Game to start.");
+		showCrtActionMsg("等待游戏开始");
 		log("Game is not running, sleep 2 seconds.");
 		errorCounter++;
 		if (errorCounter > 90 && AUTORUN) { //3 minutes no game found -> reload page
@@ -96,7 +96,7 @@ function main() {
 			errorCounter = 0;
 		}
 		clearCrtStrategyMsg();
-		showCrtActionMsg("Waiting for own turn.");
+		showCrtActionMsg("等待轮到自己");
 		setTimeout(main, 500);
 
 		if (MODE === AIMODE.HELP) {
@@ -105,7 +105,7 @@ function main() {
 		return;
 	}
 
-	showCrtActionMsg("Calculating best move...");
+	showCrtActionMsg("计算中...");
 
 	setTimeout(mainOwnTurn, 200 + (Math.random() * 200));
 }
@@ -225,7 +225,7 @@ async function mainOwnTurn() {
 	log(" ");
 
 	if (MODE === AIMODE.AUTO) {
-		showCrtActionMsg("Own turn completed.");
+		showCrtActionMsg("自己回合完成");
 	}
 
 	if ((getOverallTimeLeft() < 8 && getLastTurnTimeLeft() - getOverallTimeLeft() <= 0) || //Not much overall time left and last turn took longer than the 5 second increment
@@ -307,7 +307,7 @@ function setData(mainUpdate = true) {
 function startGame() {
 	if (!isInGame() && run && AUTORUN) {
 		log("Searching for Game in Room " + ROOM);
-		showCrtActionMsg("Searching for Game...");
+		showCrtActionMsg("搜索游戏中...");
 		searchForGame();
 	}
 }

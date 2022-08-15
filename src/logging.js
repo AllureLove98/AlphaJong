@@ -69,16 +69,16 @@ function getTilesFromString(inputString) {
 	for (let input of inputString) {
 		var type = 4;
 		switch (input) {
-			case "p":
+			case "筒":
 				type = 0;
 				break;
-			case "m":
+			case "万":
 				type = 1;
 				break;
-			case "s":
+			case "索":
 				type = 2;
 				break;
-			case "z":
+			case "字":
 				type = 3;
 				break;
 			default:
@@ -105,16 +105,16 @@ function getTileFromString(inputString) {
 	var type = 4;
 	var dr = false;
 	switch (inputString[1]) {
-		case "p":
+		case "筒":
 			type = 0;
 			break;
-		case "m":
+		case "万":
 			type = 1;
 			break;
-		case "s":
+		case "索":
 			type = 2;
 			break;
-		case "z":
+		case "字":
 			type = 3;
 			break;
 	}

@@ -42,8 +42,8 @@ const AIMODE = { //ENUM of AI mode
 	HELP: 1,
 }
 const AIMODE_NAME = [ //Name of AI mode
-	"Auto",
-	"Help",
+	"自动",
+	"手动",
 ]
 const STRATEGIES = { //ENUM of strategies
 	GENERAL: 'General',

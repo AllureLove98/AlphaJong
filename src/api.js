@@ -145,7 +145,7 @@ function makeCall(type) {
 		app.NetAgent.sendReq2MJ('FastTest', 'inputChiPengGang', { type: type, index: 0, timeuse: Math.random() * 2 + 1 });
 		view.DesktopMgr.Inst.WhenDoOperation();
 	} else {
-		showCrtStrategyMsg(`Accept: Call ${getCallNameByType(type)};`);
+		showCrtStrategyMsg(`接受: 鸣牌 ${getCallNameByType(type)};`);
 	}
 }
 
@@ -154,7 +154,7 @@ function makeCallWithOption(type, option) {
 		app.NetAgent.sendReq2MJ('FastTest', 'inputChiPengGang', { type: type, index: option, timeuse: Math.random() * 2 + 1 });
 		view.DesktopMgr.Inst.WhenDoOperation();
 	} else {
-		showCrtStrategyMsg(`Accept ${option}: Call ${getCallNameByType(type)};`);
+		showCrtStrategyMsg(`接受 ${option}: 鸣牌 ${getCallNameByType(type)};`);
 	}
 }
 
@@ -170,7 +170,7 @@ function declineCall(operation) {
 			log("Failed to decline the Call. Maybe someone else was faster?");
 		}
 	} else {
-		showCrtStrategyMsg(`Decline: Call ${getCallNameByType(operation)};`);
+		showCrtStrategyMsg(`拒绝: 鸣牌 ${getCallNameByType(operation)};`);
 	}
 }
 
@@ -179,7 +179,7 @@ function sendRiichiCall(tile, moqie) {
 		app.NetAgent.sendReq2MJ('FastTest', 'inputOperation', { type: mjcore.E_PlayOperation.liqi, tile: tile, moqie: moqie, timeuse: Math.random() * 2 + 1 }); //Moqie: Throwing last drawn tile (Riichi -> false)
 	} else {
 		let tileName = getTileEmojiByName(tile);
-		showCrtStrategyMsg(`Riichi: ${tileName};`);
+		showCrtStrategyMsg(`立直: ${tileName};`);
 	}
 }
 
@@ -189,7 +189,7 @@ function sendKitaCall() {
 		app.NetAgent.sendReq2MJ('FastTest', 'inputOperation', { type: mjcore.E_PlayOperation.babei, moqie: moqie, timeuse: Math.random() * 2 + 1 });
 		view.DesktopMgr.Inst.WhenDoOperation();
 	} else {
-		showCrtStrategyMsg(`Accept: Kita;`);
+		showCrtStrategyMsg(`接受: 拔北;`);
 	}
 }
 
@@ -198,7 +198,7 @@ function sendAbortiveDrawCall() {
 		app.NetAgent.sendReq2MJ('FastTest', 'inputOperation', { type: mjcore.E_PlayOperation.jiuzhongjiupai, index: 0, timeuse: Math.random() * 2 + 1 });
 		view.DesktopMgr.Inst.WhenDoOperation();
 	} else {
-		showCrtStrategyMsg(`Accept: Kyuushu Kyuuhai;`);
+		showCrtStrategyMsg(`接受: 九种九牌;`);
 	}
 }
 
@@ -216,7 +216,7 @@ function callDiscard(tileNumber) {
 	} else {
 		let tileID = ownHand[tileNumber];
 		let tileName = getTileName(tileID, false);
-		showCrtStrategyMsg(`Discard: ${tileName};`);
+		showCrtStrategyMsg(`切: ${tileName};`);
 		if (CHANGE_RECOMMEND_TILE_COLOR) {
 			view.DesktopMgr.Inst.mainrole.hand.forEach(
 				tile => tile.val.toString() == tileID ?
