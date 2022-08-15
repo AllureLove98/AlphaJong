@@ -44,7 +44,7 @@ def main():
     data = addFileToString(data, "ai_defense.js")
     data = addFileToString(data, "main.js")
         
-    with open ('build/AlphaJong_zh_ch' + VERSION + '.user.js', 'w', encoding="utf-8") as fp:
+    with open ('build/AlphaJong_zh_ch_' + VERSION + '.user.js', 'w', encoding="utf-8") as fp:
         fp.write(data)
 
 if __name__ == "__main__":
