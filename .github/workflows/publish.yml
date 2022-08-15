@@ -22,5 +22,11 @@ jobs:
           name: dist-userscript
           path: |
             build/*.user.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.QUEHUN_AI }}
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+         repo_token: ${{ secrets.QUEHUN_AI }}
+         file: build/*.user.js
+         tag: ${{ github.ref }}
+         file_glob: true
+         overwrite: true
