@@ -107,7 +107,7 @@ function main() {
 
 	showCrtActionMsg("计算中...");
 
-	setTimeout(mainOwnTurn, 200 + (Math.random() * 200));
+	setTimeout(mainOwnTurn, 300 + (Math.random() * 300));
 }
 
 var oldOps = []
