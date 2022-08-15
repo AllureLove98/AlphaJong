@@ -27,6 +27,6 @@ jobs:
         with:
          repo_token: ${{ secrets.QUEHUN_AI }}
          file: build/*.user.js
-         tag: "v1.3.1"
+         tag: "v1.3.2"
          file_glob: true
          overwrite: true
