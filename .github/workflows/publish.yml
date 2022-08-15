@@ -22,3 +22,5 @@ jobs:
           name: dist-userscript
           path: |
             build/*.user.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.QUEHUN_AI }}
