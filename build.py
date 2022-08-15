@@ -11,7 +11,7 @@ def addFileToString(inputString, filename):
         
     return inputString
     
-VERSION = "1.3.1_zh_ch"
+VERSION = "1.3.2_beta"
 
 data = f"""// ==UserScript==
 // @name         AlphaJong_zh_ch
@@ -22,6 +22,7 @@ data = f"""// ==UserScript==
 // @match        https://mahjongsoul.game.yo-star.com/*
 // @match        https://majsoul.com/*
 // @match        https://game.maj-soul.com/*
+// @match        https://game.maj-soul.net/*
 // @match        https://majsoul.union-game.com/*
 // @match        https://game.mahjongsoul.com/*
 // ==/UserScript==
